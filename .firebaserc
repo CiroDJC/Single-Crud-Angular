@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "single-crud": {
+      "hosting": {
+        "Single-Crud": [
+          "single-crud"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "single-crud"
+  }
+}
