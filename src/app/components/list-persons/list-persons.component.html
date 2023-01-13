@@ -27,12 +27,38 @@
                         <td>{{person.Email}}</td>
                         <td>{{person.mobileNumber}}</td>
                         <td class="text-center">
-                            <button type="button" class="btn btn-outline-primary" [routerLink]="['/update-persons/',person.id]">
+                            <button type="button" class="btn btn-outline-primary"
+                                [routerLink]="['/update-persons/',person.id]">
                                 <i class="bi bi-pencil-square"></i>
                             </button>
-                            <button (click)="deletePerson(person.id)" type="button" class="btn btn-outline-danger ms-2">
+                            <button type="button" class="btn btn-outline-danger ms-2"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <i class="bi bi-trash"></i>
                             </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Person</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Do you want delete this person?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-bs-dismiss="modal">No</button>
+                                            <button (click)="deletePerson(person.id)" 
+                                                    type="button" class="btn btn-danger"
+                                                    data-bs-dismiss="modal"
+                                                    routerLink="/list-persons">Yes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
