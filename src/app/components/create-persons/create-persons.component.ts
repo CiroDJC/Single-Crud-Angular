@@ -1,5 +1,5 @@
 import { Component, InjectionToken, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, TitleStrategy } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { PersonService } from 'src/app/services/person.service';
@@ -25,13 +25,13 @@ export class CreatePersonsComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       Age: ['', Validators.required],
-      Email: ['', Validators.required],
-      mobileNumber: ['', Validators.required],
+      Email: ['', [Validators.required, Validators.email]],
+      mobileNumber: ['', [ Validators.minLength(10),Validators.required]],
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');
     console.log(this.id);
   }
-
+  get f() { return this.createPersons.controls; }
   ngOnInit(): void {
     this.getPerson();
   }
