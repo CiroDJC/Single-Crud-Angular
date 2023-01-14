@@ -8,6 +8,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgParticlesModule } from "ng-particles";
 
 //Components
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     NavbarComponent
   ],
   imports: [
+    [/* other imports */ NgParticlesModule /* NgParticlesModule is required*/],
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
