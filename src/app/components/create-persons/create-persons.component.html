@@ -1,18 +1,19 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
-            <div class="card text-center">
-                <div class="card-body">
+            <div class="card bg-opacity text-center">
+                <div class="card-body text-light">
                     <h3>
                         {{title}}
                         <div *ngIf="loading" class="spinner-border float-end" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
                     </h3>
-                    <div *ngIf="submitted && createPersons.invalid" class="alert alert-danger d-flex align-items-center"
+                    
+                    <div *ngIf="submitted && createPersons.invalid" class="mt-3 row alert alert-danger fw-bold d-flex"
                         role="alert">
-                        <div>
-                            Please complete all fields
+                        <div class="row align-items-center">
+                            <i class="fs-5 bi bi-x-circle-fill">  Please complete all fields</i>
                         </div>
                     </div>
                     <form class="mt-4" [formGroup]="createPersons" (ngSubmit)="addUpdatePerson()">
@@ -20,26 +21,26 @@
                             <div class="col">
                                 <input type="text" class="form-control form-control-lg" formControlName="firstName"
                                     placeholder="First Name">
-                                    <span *ngIf="submitted && f['firstName'].invalid" class="text-danger">Please provide a valid First Name</span>
+                                    <span *ngIf="submitted && f['firstName'].invalid" class="fw-bold text-danger">Please provide a valid First Name</span>
                             </div>
                             
                             <div class="col">
                                 <input type="text" class="form-control form-control-lg" formControlName="lastName"
                                     placeholder="Last Name">
-                                    <span *ngIf="submitted && f['lastName'].invalid" class="text-danger">Please provide a valid Last Name</span>
+                                    <span *ngIf="submitted && f['lastName'].invalid" class="fw-bold text-danger">Please provide a valid Last Name</span>
                             </div>
                         </div>
                         <input type="numeric" maxlength="2" class="form-control form-control-lg mt-3" formControlName="Age"
                             placeholder="Age">
-                            <span *ngIf="submitted && f['Age'].invalid" class="text-danger">Please provide a valid Age</span>
+                            <span *ngIf="submitted && f['Age'].invalid" class="fw-bold text-danger">Please provide a valid Age</span>
                         <input type="email" class="form-control form-control-lg mt-3" formControlName="Email"
                             placeholder="Email">
-                            <span *ngIf="submitted && f['Email'].invalid" class="text-danger">Please provide a valid Email (Example: user@gmail.com)</span>
+                            <span *ngIf="submitted && f['Email'].invalid" class="fw-bold text-danger">Please provide a valid Email (Example: user@gmail.com)</span>
                         <input type="numeric" maxlength="10" class="form-control form-control-lg mt-3" maxlength=10 formControlName="mobileNumber"
                             placeholder="Mobile Number">
-                            <span *ngIf="submitted && f['mobileNumber'].invalid && f['mobileNumber']" class="text-danger">Please provide a valid Mobile Number (Max 10 characteres)</span>
+                            <span *ngIf="submitted && f['mobileNumber'].invalid && f['mobileNumber']" class="fw-bold text-danger">Please provide a valid Mobile Number (Max 10 characteres)</span>
                         <div class="mt-3">
-                            <button type="submit" class="btn btn-secondary btn-lg">{{btn}}</button>
+                            <button type="submit" class="btn btn-dark btn-lg">{{btn}}</button>
                             <button type="text" class="btn btn-dark btn-lg ms-2" routerLink="/list-persons">Go
                                 Back</button>
                         </div>

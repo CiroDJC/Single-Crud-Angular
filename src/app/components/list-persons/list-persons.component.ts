@@ -16,8 +16,9 @@ export class ListPersonsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPersons();
-  }
 
+  }
+  
   getPersons() {
     this._personService.getPersons().subscribe(data => {
       this.persons = [];
@@ -33,7 +34,8 @@ export class ListPersonsComponent implements OnInit {
 
   deletePerson(id: string){
     this._personService.deletePerson(id).then(()=>{
-      this.toastr.error('Person deleted sucessfull','Delete Sucessfull')
+      this.toastr.error('Person deleted sucessfull','Delete Sucessfull',{
+        positionClass:'toast-bottom-right'})
     }).catch(Error=>{
       console.log(Error);
     })

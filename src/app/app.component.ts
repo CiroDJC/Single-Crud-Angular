@@ -23,9 +23,9 @@ export class AppComponent {
             number: {
                 density: {
                     enable: true,
-                    area: 1000,
+                    area: 800,
                 },
-                value: 100,
+                value: 250,
             },
             opacity:{
                 value:1,

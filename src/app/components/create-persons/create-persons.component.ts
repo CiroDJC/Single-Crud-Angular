@@ -60,7 +60,8 @@ export class CreatePersonsComponent implements OnInit {
     }
     this.loading = true;
     this._personService.addPerson(person).then(() => {
-      this.toastr.success('Person register successful!', 'Register successful');
+      this.toastr.success('Person register successful!', 'Register successful',{
+        positionClass:'toast-bottom-right'});
       this.loading = false;
       this.router.navigate(['/list-persons'])
     }).catch(Error => {
@@ -80,7 +81,8 @@ export class CreatePersonsComponent implements OnInit {
       this.loading =true;
       this._personService.updatePerson(id,person).then(() => {
         this.loading = false
-        this.toastr.info('Info Person Update Sucessfull','Update Sucessfull')
+        this.toastr.info('Info Person Update Sucessfull','Update Sucessfull',{
+          positionClass:'toast-bottom-right'})
       })
       this.router.navigate(['/list-persons'])
     }
@@ -89,7 +91,7 @@ export class CreatePersonsComponent implements OnInit {
     
     if (this.id !== null) {
       this.loading = true;
-      this.title = 'Udate Person';
+      this.title = 'Udate Data';
       this.btn = 'Udate Person';
       this._personService.getPerson(this.id).subscribe(data => {
         this.loading = false;
