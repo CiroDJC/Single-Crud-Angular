@@ -13,15 +13,11 @@ export class ListPersonsComponent implements OnInit {
   constructor(private _personService: PersonService,
               private toastr: ToastrService,
               private http: HttpClient) { 
-                
               }
-    
   ngOnInit(): void {
     this.getPersons();
   }
-  
-  getPersons() {
-    
+  getPersons() { 
     this._personService.getPersons().subscribe(data => {
       this.persons = [];
   setTimeout(()=>{   
@@ -30,7 +26,7 @@ export class ListPersonsComponent implements OnInit {
       pageLength: 5,
       processing: false,
       lengthMenu : [5, 10, 25],
-      "bDestroy": true,
+      destroy: true,
   } );
   }, 1);
       data.forEach((element: any) => {
@@ -48,6 +44,7 @@ export class ListPersonsComponent implements OnInit {
     this._personService.deletePerson(id).then(()=>{
       this.toastr.error('Person deleted sucessfull','Delete Sucessfull',{
         positionClass:'toast-bottom-right'})
+        window.location.reload()
     }).catch(Error=>{
       console.log(Error);
     })
