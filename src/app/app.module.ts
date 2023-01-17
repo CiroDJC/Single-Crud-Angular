@@ -9,6 +9,9 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgParticlesModule } from "ng-particles";
+import {DataTablesModule} from 'angular-datatables';
+import { HttpClientModule } from '@angular/common/http';
+
 
 //Components
 import { AppComponent } from './app.component';
@@ -52,7 +55,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     AngularFirestoreModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DataTablesModule,
+    HttpClientModule
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

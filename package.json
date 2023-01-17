@@ -8,6 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "styles": [
+    "node_modules/datatables.net-dt/css/jquery.dataTables.css"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.1.0",
@@ -19,8 +22,12 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+    "angular-datatables": "^15.0.0",
     "build": "^0.1.4",
+    "datatables.net": "^1.13.1",
+    "datatables.net-dt": "^1.13.1",
     "g": "^2.0.1",
+    "jquery": "^3.6.3",
     "ng-particles": "^3.7.1",
     "ngx-toastr": "^16.0.2",
     "rxjs": "~7.8.0",
@@ -33,7 +40,9 @@
     "@angular-devkit/build-angular": "^15.1.1",
     "@angular/cli": "~15.1.0",
     "@angular/compiler-cli": "^15.1.0",
+    "@types/datatables.net": "^1.10.24",
     "@types/jasmine": "~4.3.0",
+    "@types/jquery": "^3.5.16",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

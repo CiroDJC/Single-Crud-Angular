@@ -30,13 +30,13 @@
                                     <span *ngIf="submitted && f['lastName'].invalid" class="fw-bold text-danger">Please provide a valid Last Name</span>
                             </div>
                         </div>
-                        <input type="numeric" maxlength="2" class="form-control form-control-lg mt-3" formControlName="Age"
+                        <input type="number" maxlength="2" class="form-control form-control-lg mt-3" formControlName="Age"
                             placeholder="Age">
                             <span *ngIf="submitted && f['Age'].invalid" class="fw-bold text-danger">Please provide a valid Age</span>
                         <input type="email" class="form-control form-control-lg mt-3" formControlName="Email"
                             placeholder="Email">
                             <span *ngIf="submitted && f['Email'].invalid" class="fw-bold text-danger">Please provide a valid Email (Example: user@gmail.com)</span>
-                        <input type="numeric" maxlength="10" class="form-control form-control-lg mt-3" maxlength=10 formControlName="mobileNumber"
+                        <input type="number" maxlength="10" class="form-control form-control-lg mt-3" maxlength=10 formControlName="mobileNumber"
                             placeholder="Mobile Number">
                             <span *ngIf="submitted && f['mobileNumber'].invalid && f['mobileNumber']" class="fw-bold text-danger">Please provide a valid Mobile Number (Max 10 characteres)</span>
                         <div class="mt-3">

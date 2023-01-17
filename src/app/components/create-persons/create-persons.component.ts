@@ -32,6 +32,7 @@ export class CreatePersonsComponent implements OnInit {
     console.log(this.id);
   }
   get f() { return this.createPersons.controls; }
+  
   ngOnInit(): void {
     this.getPerson();
   }

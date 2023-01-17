@@ -1,14 +1,14 @@
 <div class="container mt-4">
-    <div class="card">
-        <div class="card-body text-center text-light">
+    <div class="card bg-opacity">
+        <div class="card-body text-center">
             <span class="h3">LIST PERSONS</span>
-            <button type="button" class="btn btn-outline-light float-end" routerLink="/create-persons">
+            <button type="button" class="btn btn-outline-dark float-end mb-3" routerLink="/create-persons">
                 <i class="bi bi-person-plus"></i>
             </button>
             <div *ngIf="persons.length == 0" class="text-center fw-bold mt-3 alert alert-warning" role="alert">
                 <i class="fs-5 bi bi-exclamation-circle-fill"> No items to display</i>
             </div>
-            <table *ngIf="persons.length > 0" class="table text-light mt-3">
+            <table class="table table-hover" style="width:100%" id="datatableExample" *ngIf="persons.length > 0" >
                 <thead>
                     <tr>
                         <th scope="col">First Name</th>
@@ -20,18 +20,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let person of persons">
+                        <tr *ngFor="let person of persons">
                         <td>{{person.firstName}}</td>
                         <td>{{person.lastName}}</td>
                         <td>{{person.Age}}</td>
                         <td>{{person.Email}}</td>
                         <td>{{person.mobileNumber}}</td>
                         <td class="text-center">
-                            <button type="button" class="btn btn-outline-light"
+                            <button type="button" class="btn btn-outline-primary"
                                 [routerLink]="['/update-persons/',person.id]">
                                 <i class="bi bi-pencil-square"></i>
                             </button>
-                            <button type="button" class="btn btn-outline-light ms-2" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-outline-danger ms-2" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 <i class="bi bi-trash"></i>
                             </button>
@@ -51,9 +51,9 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-outline-primary"
                                                 data-bs-dismiss="modal">No</button>
-                                            <button (click)="deletePerson(person.id)" type="button"
-                                                class="btn btn-outline-danger" data-bs-dismiss="modal"
-                                                routerLink="/list-persons">Yes</button>
+                                            <button  (click)="deletePerson(person.id)" type="button"
+                                            class="btn btn-outline-danger" data-bs-dismiss="modal"
+                                                routerLink="/list-persons" onclick="location.reload()">Yes</button>
                                         </div>
                                     </div>
                                 </div>

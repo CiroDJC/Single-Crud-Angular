@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine";
+import { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+import { Subject } from 'rxjs';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Single-Crud';
-  id = "tsparticles";
 
+    title = 'Single-Crud';
+    id = "tsparticles";
     /* Starting from 1.19.0 you can use a remote url (AJAX request) to a JSON with the configuration */
     particlesUrl = "http://foo.bar/particles.json";
 
@@ -27,14 +29,14 @@ export class AppComponent {
                 },
                 value: 250,
             },
-            opacity:{
-                value:1,
-                random:true,
-                anim:{
-                    enable:true,
-                    speed:1,
-                    opacity_min:0,
-                    sync:false
+            opacity: {
+                value: 1,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0,
+                    sync: false
                 }
             },
             shape: {
